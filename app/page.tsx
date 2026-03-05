@@ -11,31 +11,31 @@ export default function HomePage() {
     {
       name: "Wood Ember",
       note: "Smoky Wood",
-      image: "/images/wood-ember.jpg",
+      image: "/images/Wood-Ember.jpg",
       description: "Warm and mysterious scent inspired by dark forests.",
     },
     {
       name: "Rogue Atlas",
       note: "Amber Noir",
-      image: "/images/rogue-atlas.jpg",
+      image: "/images/Rogue-Atlas.jpg",
       description: "Bold and adventurous, perfect for the modern nomad.",
     },
     {
       name: "Midnight Sky",
       note: "Night Jasmine",
-      image: "/images/midnight-sky.jpg",
+      image: "/images/Midnight-Sky.jpg",
       description: "Delicate jasmine blended with night air for a calming effect.",
     },
     {
       name: "Skybound",
       note: "Black Musk",
-      image: "/images/skybound.jpg",
+      image: "/images/Skybound.jpg",
       description: "Elevates the senses with a clean, airy musk fragrance.",
     },
     {
       name: "Violet Veil",
       note: "Citrus Amber",
-      image: "/images/violet-veil.jpg",
+      image: "/images/Violet-Veil.jpg",
       description: "A vibrant mix of citrus and amber for a luminous presence.",
     },
   ];
