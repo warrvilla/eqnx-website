@@ -7,11 +7,11 @@ import { motion } from "framer-motion";
 
 export default function ShopPage() {
   const scents = [
-    { name: "Wood Ember", note: "Smoky Wood", image: "/images/wood-ember.jpg" },
-    { name: "Rogue Atlas", note: "Amber Noir", image: "/images/rogue-atlas.jpg" },
-    { name: "Midnight Sky", note: "Night Jasmine", image: "/images/midnight-sky.jpg" },
-    { name: "Skybound", note: "Black Musk", image: "/images/skybound.jpg" },
-    { name: "Violet Veil", note: "Citrus Amber", image: "/images/violet-veil.jpg" },
+    { name: "Wood Ember", note: "Smoky Wood", image: "/images/Wood-Ember.jpg" },
+    { name: "Rogue Atlas", note: "Amber Noir", image: "/images/Rogue-Atlas.jpg" },
+    { name: "Midnight Sky", note: "Night Jasmine", image: "/images/Midnight-Sky.jpg" },
+    { name: "Skybound", note: "Black Musk", image: "/images/Skybound.jpg" },
+    { name: "Violet Veil", note: "Citrus Amber", image: "/images/Violet-Veil.jpg" },
   ];
 
   return (
