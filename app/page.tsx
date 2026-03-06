@@ -26,12 +26,12 @@ export default function HomePage() {
   ];
 
   const reviews = [
-    { name: "Alice", image: "/images/placeholder.jpg", rating: 5, comment: "Absolutely love Wood Ember! Perfect scent." },
-    { name: "Brian", image: "/images/placeholder.jpg", rating: 5, comment: "Rogue Atlas is so bold and amazing!" },
-    { name: "Clara", image: "/images/placeholder.jpg", rating: 5, comment: "Midnight Sky is calming and elegant." },
-    { name: "David", image: "/images/placeholder.jpg", rating: 5, comment: "Skybound elevates my mood every day!" },
-    { name: "Eva", image: "/images/placeholder.jpg", rating: 5, comment: "Violet Veil is bright and uplifting." },
-    { name: "Frank", image: "/images/placeholder.jpg", rating: 5, comment: "EQNX fragrances are top quality!" },
+    { name: "Elijah", image: "/images/placeholder.jpg", rating: 5, comment: "Absolutely love Wood Ember! Perfect scent." },
+    { name: "Karen", image: "/images/placeholder.jpg", rating: 5, comment: "Every scent I tried from them smells like heaven" },
+    { name: "James", image: "/images/placeholder.jpg", rating: 5, comment: "Midnight Sky is calming and elegant." },
+    { name: "Arianne", image: "/images/placeholder.jpg", rating: 5, comment: "Skybound elevates my mood every day!" },
+    { name: "Kurt", image: "/images/placeholder.jpg", rating: 4, comment: "Perfume is good, but packaging needs improvement. I love it tho." },
+    { name: "Joshua", image: "/images/placeholder.jpg", rating: 5, comment: "EQNX fragrances are top quality!" },
   ];
 
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -171,7 +171,7 @@ export default function HomePage() {
         className="bg-white/50 py-24"
       >
         <div className="max-w-[900px] mx-auto px-6 text-center">
-          <h2 className="text-4xl font-bold mb-6">The EQNX Philosophy</h2>
+          <h2 className="text-4xl font-bold mb-6 text-black">The EQNX Philosophy</h2>
           <p className="text-neutral-800 text-lg leading-relaxed">
             EQNX exists at the intersection of night and light. Every fragrance is
             designed to evoke motion, ambition, and identity. Crafted with precision,
@@ -189,7 +189,7 @@ export default function HomePage() {
         className="py-20"
       >
         <div className="max-w-[1400px] mx-auto px-6 text-center">
-          <h2 className="text-4xl font-bold mb-6">Discover Your Signature Scent</h2>
+          <h2 className="text-4xl font-bold mb-6 text-black">Discover Your Signature Scent</h2>
           <motion.a
             href="/shop"
             whileHover={{ scale: 1.08 }}
