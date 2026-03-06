@@ -18,11 +18,11 @@ import Image from "next/image";
 
 export default function ShopPage() {
   const products = [
-    { name: "Wood Ember", note: "Smoky Wood", price: "₱799", img: "/images/Wood-Ember.jpg" },
-    { name: "Rogue Atlas", note: "Amber Noir", price: "₱799", img: "/images/Rogue-Atlas.jpg" },
-    { name: "Midnight Sky", note: "Night Jasmine", price: "₱799", img: "/images/Midnight-Sky.jpg" },
-    { name: "Skybound", note: "Black Musk", price: "₱799", img: "/images/Skybound.jpg" },
-    { name: "Violet Veil", note: "Citrus Amber", price: "₱799", img: "/images/Violet-Veil.jpg" },
+    { name: "Wood Ember", note: "Smoky Wood", price: "₱799", img: "/images/Shop-Wood-Ember.jpg" },
+    { name: "Rogue Atlas", note: "Amber Noir", price: "₱799", img: "/images/Shop-Rogue-Atlas.jpg" },
+    { name: "Midnight Sky", note: "Night Jasmine", price: "₱799", img: "/images/Shop-Midnight-Sky.jpg" },
+    { name: "Skybound", note: "Black Musk", price: "₱799", img: "/images/Shop-Skybound.jpg" },
+    { name: "Violet Veil", note: "Citrus Amber", price: "₱799", img: "/images/Shop-Violet-Veil.jpg" },
   ];
 
   return (
