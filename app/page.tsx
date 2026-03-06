@@ -1,5 +1,14 @@
 "use client";
 
+/*
+EQNX HOMEPAGE – HERO BANNER UPDATED
+- Hero banner height 80vh (compact)
+- Products section with sharp edges
+- Product titles in Times New Roman and black
+- Navbar & Footer included
+- Animations retained
+*/
+
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Image from "next/image";
@@ -7,37 +16,13 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 
 export default function HomePage() {
+
   const products = [
-    {
-      name: "Wood Ember",
-      note: "Smoky Wood",
-      image: "/images/Wood-Ember.jpg",
-      description: "Warm and mysterious scent inspired by dark forests.",
-    },
-    {
-      name: "Rogue Atlas",
-      note: "Amber Noir",
-      image: "/images/Rogue-Atlas.jpg",
-      description: "Bold and adventurous, perfect for the modern nomad.",
-    },
-    {
-      name: "Midnight Sky",
-      note: "Night Jasmine",
-      image: "/images/Midnight-Sky.jpg",
-      description: "Delicate jasmine blended with night air for a calming effect.",
-    },
-    {
-      name: "Skybound",
-      note: "Black Musk",
-      image: "/images/Skybound.jpg",
-      description: "Elevates the senses with a clean, airy musk fragrance.",
-    },
-    {
-      name: "Violet Veil",
-      note: "Citrus Amber",
-      image: "/images/Violet-Veil.jpg",
-      description: "A vibrant mix of citrus and amber for a luminous presence.",
-    },
+    { name: "Wood Ember", note: "Smoky Wood", image: "/images/Wood-Ember.jpg", description: "Warm and mysterious scent inspired by dark forests." },
+    { name: "Rogue Atlas", note: "Amber Noir", image: "/images/Rogue-Atlas.jpg", description: "Bold and adventurous, perfect for the modern nomad." },
+    { name: "Midnight Sky", note: "Night Jasmine", image: "/images/Midnight-Sky.jpg", description: "Delicate jasmine blended with night air for a calming effect." },
+    { name: "Skybound", note: "Black Musk", image: "/images/Skybound.jpg", description: "Elevates the senses with a clean, airy musk fragrance." },
+    { name: "Violet Veil", note: "Citrus Amber", image: "/images/Violet-Veil.jpg", description: "A vibrant mix of citrus and amber for a luminous presence." },
   ];
 
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -51,11 +36,13 @@ export default function HomePage() {
   }, []);
 
   return (
-    <div className="bg-[#d7d4cd] font-sans" style={{ fontFamily: "Segoe UI, sans-serif" }}>
+    <div className="bg-[#d7d4cd] font-sans">
+
+      {/* NAVIGATION */}
       <Navbar />
 
-      {/* HERO BANNER SLIDER */}
-      <section className="relative w-full h-[70vh] mt-[100px] overflow-hidden">
+      {/* HERO BANNER */}
+      <section className="relative w-full h-[80vh] overflow-hidden">
         <AnimatePresence mode="wait">
           <motion.div
             key={currentSlide}
@@ -65,86 +52,130 @@ export default function HomePage() {
             transition={{ duration: 1 }}
             className="absolute inset-0"
           >
+            {/* HERO IMAGE */}
             <Image
               src={products[currentSlide].image}
               alt={products[currentSlide].name}
               fill
+              priority
               style={{ objectFit: "cover" }}
-              className="brightness-90"
+              className="rounded-none"
             />
-            <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-black/10 flex flex-col justify-center items-center text-center px-6">
-              <h1 className="text-4xl md:text-5xl font- text-white mb-4">
+
+            {/* DARK OVERLAY FOR READABILITY */}
+            <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/10 flex flex-col justify-center items-center text-center px-6 rounded-none">
+              <motion.h1
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1 }}
+                className="text-5xl md:text-6xl text-white mb-4 drop-shadow-xl"
+              >
                 EQNX
-              </h1>
-              <p className="text-lg md:text-xl text-white/90 mb-6">
+              </motion.h1>
+
+              <motion.p
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3, duration: 1 }}
+                className="text-xl md:text-2xl text-white/90 mb-6 drop-shadow-lg"
+              >
                 Scent Beyond Boundaries
-              </p>
-              <a
+              </motion.p>
+
+              <motion.a
                 href="/shop"
-                className="px-8 py-3 rounded-full bg-[#bfa56a] text-black font-semibold hover:bg-black hover:text-white transition-all"
+                whileHover={{ scale: 1.08 }}
+                whileTap={{ scale: 0.95 }}
+                className="px-10 py-4 bg-[#bfa56a] text-black font-semibold shadow-lg hover:bg-black hover:text-white transition-all"
               >
                 Shop Collection
-              </a>
+              </motion.a>
             </div>
           </motion.div>
         </AnimatePresence>
       </section>
 
-      {/* FEATURED PRODUCTS – Editorial Layout */}
+      {/* PRODUCTS SECTION */}
       <section className="max-w-[1400px] mx-auto px-6 py-24 space-y-24">
         {products.map((prod, idx) => (
-          <div
+          <motion.div
             key={idx}
+            initial={{ opacity: 0, y: 60 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
             className={`flex flex-col md:flex-row items-center gap-8 ${
               idx % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
             }`}
           >
-            {/* IMAGE */}
-            <div className="relative w-full md:w-1/2 h-[300px] sm:h-[400px] md:h-[450px] rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-shadow duration-500">
+            {/* PRODUCT IMAGE */}
+            <div className="relative w-full md:w-1/2 h-[400px] sm:h-[450px] md:h-[420px] overflow-hidden shadow-xl group rounded-none">
               <Image
                 src={prod.image}
                 alt={prod.name}
                 fill
                 style={{ objectFit: "cover" }}
+                className="transition-transform duration-[1200ms] group-hover:scale-110 rounded-none"
               />
             </div>
 
-            {/* TEXT */}
+            {/* PRODUCT TEXT */}
             <div className="md:w-1/2 text-center md:text-left">
-              <h3 className="text-3xl font-bold mb-2">{prod.name}</h3>
+              {/* TITLE in Times New Roman, black */}
+              <h3
+                className="text-4xl font-bold mb-2 text-black"
+                style={{ fontFamily: "Times New Roman, serif" }}
+              >
+                {prod.name}
+              </h3>
               <h4 className="text-lg italic text-neutral-600 mb-4">{prod.note}</h4>
-              <p className="text-neutral-800 text-lg">{prod.description}</p>
+              <p className="text-neutral-800 text-lg leading-relaxed">{prod.description}</p>
             </div>
-          </div>
+          </motion.div>
         ))}
       </section>
 
-      {/* PHILOSOPHY SECTION */}
-      <section className="bg-white/50 py-24">
+      {/* PHILOSOPHY */}
+      <motion.section
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.9 }}
+        viewport={{ once: true }}
+        className="bg-white/50 py-24"
+      >
         <div className="max-w-[900px] mx-auto px-6 text-center">
-          <h2 className="text-4xl font-bold mb-8">The EQNX Philosophy</h2>
+          <h2 className="text-4xl font-bold mb-6">The EQNX Philosophy</h2>
           <p className="text-neutral-800 text-lg leading-relaxed">
             EQNX exists at the intersection of night and light. Every fragrance is
             designed to evoke motion, ambition, and identity. Crafted with precision,
             each scent lingers with a presence that captivates.
           </p>
         </div>
-      </section>
+      </motion.section>
 
-      {/* CTA BANNER */}
-      <section className="py-20">
+      {/* CTA */}
+      <motion.section
+        initial={{ opacity: 0, scale: 0.95 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+        className="py-20"
+      >
         <div className="max-w-[1400px] mx-auto px-6 text-center">
           <h2 className="text-4xl font-bold mb-6">Discover Your Signature Scent</h2>
-          <a
+          <motion.a
             href="/shop"
-            className="px-10 py-4 rounded-full bg-[#bfa56a] text-black font-semibold hover:bg-black hover:text-white transition-all"
+            whileHover={{ scale: 1.08 }}
+            className="px-12 py-5 bg-[#bfa56a] text-black font-semibold shadow-xl hover:bg-black hover:text-white transition-all"
           >
             Shop Now
-          </a>
+          </motion.a>
         </div>
-      </section>
+      </motion.section>
 
+      {/* FOOTER */}
       <Footer />
+
     </div>
   );
 }
